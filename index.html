@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f8f6f0">
+<meta name="description" content="Explorá la carta de Chateau Vanguardia: pastas italianas, steakhouse, pizzas, vinos y más.">
+<title>Menu · Chateau Vanguardia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Italiana&family=Outfit:wght@300;400;500;600&display=swap">
+<style>
+:root{--bg:#f6f4ef;--card:#fdfcf9;--ink:#4a2f28;--text:#6b6058;--line:#d9d5cc;--chip:#5f5d5a;--gold:#a8895a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Outfit,system-ui,sans-serif;font-weight:300;line-height:1.55;overflow-x:hidden}
+.arc{position:absolute;top:-10px;width:140px;height:140px;border:1px solid var(--line);border-radius:50%;pointer-events:none}
+.arc.l{left:-95px}.arc.r{right:-95px}
+header{position:relative;text-align:center;padding:36px 16px 24px;overflow:hidden}
+.brand{font-size:.62rem;letter-spacing:.35em;text-transform:uppercase;color:var(--text)}
+h1{font-family:Italiana,Georgia,serif;font-weight:400;color:var(--ink);font-size:clamp(4.2rem,16vw,7.5rem);line-height:1;margin:.15em 0 .1em;letter-spacing:.02em}
+.orn{display:flex;align-items:center;justify-content:center;gap:10px;color:var(--gold);margin:6px 0}
+.orn i{display:block;width:34px;height:1px;background:var(--gold)}
+.orn span{width:7px;height:7px;border:1px solid var(--gold);transform:rotate(45deg)}
+.sub{font-size:.8rem;letter-spacing:.08em;margin:6px 0 4px}
+.note{font-size:.78rem;color:var(--text);opacity:.85;margin:0}
+nav{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:14px 16px;scrollbar-width:thin;max-width:1100px;margin:0 auto}
+.chip{flex:none;font:inherit;font-size:.74rem;letter-spacing:.03em;border:1px solid var(--line);background:transparent;color:var(--text);padding:7px 15px;border-radius:999px;cursor:pointer;transition:.2s}
+.chip:hover{border-color:var(--chip)}
+.chip.on{background:var(--chip);border-color:var(--chip);color:#fff;font-weight:500}
+main{max-width:760px;margin:0 auto;padding:10px 20px 20px}
+section{margin-top:40px}
+.sec-h{display:flex;align-items:flex-start;justify-content:space-between;border-bottom:0;margin-bottom:6px}
+h2{font-family:Italiana,Georgia,serif;font-weight:400;font-size:clamp(1.9rem,6vw,2.6rem);letter-spacing:.04em;color:var(--ink);text-transform:uppercase;margin:0;line-height:1.1}
+.star{color:#9aa0ad;font-size:1.1rem;margin-top:8px}
+.rule{width:46px;height:1px;background:var(--ink);opacity:.45;margin:10px 0 14px}
+.intro{font-size:.85rem;margin:0 0 14px;max-width:560px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{background:var(--card);border:1px solid var(--line);padding:16px 17px 14px;display:flex;flex-direction:column}
+.card:before{content:"";width:16px;height:1px;background:var(--ink);opacity:.6;margin-bottom:14px}
+.card h3{margin:0 0 8px;font-weight:600;font-size:.88rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink)}
+.card p{margin:0 0 14px;font-size:.8rem;flex:1}
+.price{border-top:1px solid var(--line);padding-top:10px;font-weight:600;font-size:.82rem;color:var(--ink);letter-spacing:.04em}
+.price small{display:block;font-weight:300;font-size:.7rem;color:var(--text);letter-spacing:0}
+.price span+span{margin-left:12px}
+.list{background:var(--card);border:1px solid var(--line);padding:6px 18px}
+.row{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid var(--line);font-size:.84rem}
+.row:last-child{border-bottom:0}
+.row b{font-weight:600;color:var(--ink);white-space:nowrap}
+.grp{font-weight:600;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);padding:14px 0 2px}
+.grp:first-child{padding-top:8px}
+.hide{display:none}
+.top{display:block;width:max-content;margin:36px auto 0;color:var(--text);font-size:.78rem;letter-spacing:.1em;text-decoration:none}
+footer{margin-top:40px;text-align:center;padding:30px 16px 44px;border-top:1px solid var(--line);font-size:.78rem}
+footer .nm{font-family:Italiana,Georgia,serif;font-size:1.5rem;color:var(--ink);letter-spacing:.06em;margin-bottom:6px}
+footer a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+footer div{margin:4px 0}
+@media (max-width:560px){.grid{grid-template-columns:1fr}.arc{width:100px;height:100px}}
+</style>
+</head>
+<body>
+<header>
+  <span class="arc l"></span><span class="arc r"></span>
+  <div class="brand">Chateau Vanguardia</div>
+  <h1>MENU</h1>
+  <div class="orn"><i></i><span></span><i></i></div>
+  <p class="sub">Elegí tu próxima experiencia</p>
+  <p class="note">Consultá por las opciones vegetarianas, veganas, sin gluten y menú infantil.</p>
+</header>
+<nav><div class="chips" id="chips"></div></nav>
+<main id="menu"></main>
+<footer>
+  <div class="nm">Chateau Vanguardia</div>
+  <div><a href="https://www.instagram.com/chateau.vanguardia/" target="_blank" rel="noopener">@chateau.vanguardia</a></div>
+  <div><a href="carta-original.pdf" target="_blank" rel="noopener">Ver carta original en PDF ↗</a></div>
+</footer>
+
+<script>
+/* ============ DATOS DE LA CARTA (editá acá) ============
+   cards: tarjetas con nombre, descripción y precio
+   list : filas simples nombre / precio
+   wine : filas agrupadas por bodega                       */
+var E="Valor de la experiencia";
+var MENU=[
+{id:"pastas",t:"Pastas italianas",type:"cards",
+ intro:"Nuestra cocina de pastas combina tradición italiana y una mirada propia. Pasta seca importada de Italia, pastas rellenas amasadas a mano y salsas elaboradas con tomate italiano.",
+ items:[
+ ["De la abuela","Pasta seca italiana spaghetti o penne rigate, con salsa pomodoro, hongos, pesto o rosa",[[E,"$ 20.000"]]],
+ ["Sorrentino","Pasta fresca relleno jamón y mozzarella, acompañado con salsa de pomodoro y crema",[[E,"$ 26.000"]]],
+ ["Ragu del abuelo","Pasta seca italiana spaghetti o penne rigate, acompañado con salsa ragu (alla bolognese)",[[E,"$ 24.000"]]],
+ ["Panzotti","Pasta fresca relleno pollo cocción al disco, acompañado con salsa crema de cúrcuma",[[E,"$ 26.000"]]],
+ ["Gnocchi ripieni","Pasta fresca ñoquis rellenos, mozzarella y jamón, acompañado con salsa de pomodoro",[[E,"$ 24.000"]]],
+ ["Ravioli","Pasta fresca relleno carne cocción brasas, acompañado con salsa pomodoro y chimichurri",[[E,"$ 28.000"]]],
+ ["Doppio","Pasta fresca ravioli relleno ricota y verdura, acompañado con salsa de pomodoro y pesto",[[E,"$ 26.000"]]],
+ ["Furiosa","Pasta seca italiana spaghetti o penne rigate, salsa pomodoro, burrata, tomates y pesto",[[E,"$ 28.000"]]],
+ ["Agnelotti","Pasta fresca relleno cabutia, mozzarella y almendras, con salsa crema de hongos locales",[[E,"$ 26.000"]]],
+ ["Intensa","Pasta seca italiana spaghetti o penne rigate, salsa pomodoro, anchoas, aceitunas y guindilla",[[E,"$ 28.000"]]],
+ ["Autentica","Pasta seca italiana spaghetti o penne rigate, salsa de mejillones y langostinos (allo scoglio)",[[E,"$ 28.000"]]]
+ ]},
+{id:"carnes",t:"Nuestras carnes",type:"cards",items:[
+ ["Banderita","Asado tira de ternera, acompañado con guarnición, chimichurri, elaboración fuego directo a la parrilla",[["Una persona","$ 30.000"],["Dos personas","$ 45.000"]]],
+ ["A las brasas","Vacío o brisket, acompañado con agnelotti, salsa de crema cúrcuma y hongos locales",[[E,"$ 50.000"]]],
+ ["Vacío","Medialuna, punta o cima, acompañado con guarnición, elaboración fuego indirecto a las brasas ahumador",[["Una persona","$ 35.000"],["Dos personas","$ 50.000"]]],
+ ["Al fuego","Entraña de ternera, acompañado con spaghetti, salsa de pomodoro italiano y pesto genovés",[[E,"$ 50.000"]]],
+ ["Entraña","Entraña de ternera, acompañado con guarnición, chimichurri, elaboración fuego directo a la parrilla",[["Una persona","$ 40.000"],["Dos personas","$ 60.000"]]],
+ ["Al hierro","Ceja y ojo de bife, acompañado con guarnición. Corte transversal, elaboración fuego directo al hierro",[[E,"$ 60.000"]]],
+ ["Parrillada","Nuestras carnes de ternera, novillito o novillo, fuegos y brasas, acompañado de guarnición",[["Para dos personas","$ 60.000"]]],
+ ["Guarniciones","Ensalada lechuga, tomate y cebolla · Papas fritas · Ensalada rúcula y parmesano · Batatas fritas",[["Única presentación","$ 15.000"]]]
+ ]},
+{id:"pizzas",t:"Pizzas napoletanas",type:"cards",items:[
+ ["Margherita","Queso mozzarella, salsa de tomate italiano, queso parmesano, albahaca y alioli de albahaca",[["","$ 26.000"]]],
+ ["Non Marinara","Salsa de tomate italiano, anchoas, tomates, orégano, aceitunas negras y alioli fresco ajo",[["","$ 28.000"]]],
+ ["Abruzzo","Queso mozzarella, salsa de tomate italiano, jamón cocido, morrones y aceitunas verdes",[["","$ 28.000"]]],
+ ["Brooklyn","Queso mozzarella, salsa de tomate italiano, provoleta, orégano, pepperoni, y salsa tabasco",[["","$ 28.000"]]],
+ ["Provola","Queso mozzarella, queso provola ahumada, ciboulette, cebolla crispy y panceta laminas",[["","$ 28.000"]]],
+ ["Azzurra","Queso mozzarella, salsa de tomate italiano, queso azul, bondiola, albahaca y alioli albahaca",[["","$ 28.000"]]],
+ ["Pistacchio","Queso mozzarella, mortadela pistacchio, alioli de miel, pistacho y queso stracciatella",[["","$ 32.000"]]],
+ ["Burrata","Queso mozzarella, salsa de tomate italiano, bondiola, rúcula, albahaca, tomates y burrata",[["","$ 34.000"]]]
+ ]},
+{id:"burgers",t:"Burgers",type:"cards",items:[
+ ["Cheese Burger","Doble carne smash, cheddar, papas fritas y salsas mayonesa, ketchup, bbq o mil islas",[["","$ 20.000"]]],
+ ["Onion Burger","Doble carne smash, cheddar, bacon, cebolla caramelizada, papas fritas y salsa mil islas",[["","$ 24.000"]]],
+ ["Bacon Burger","Doble carne smash, cheddar, bacon, papas fritas, y salsas clásicas o mil islas",[["","$ 22.000"]]],
+ ["Relish Burger","Doble carne smash, cheddar, bacon, pepinillos, papas fritas y salsa mil islas",[["","$ 24.000"]]],
+ ["Egg Burger","Doble carne smash, cheddar, bacon, huevo, papas fritas, y salsas clásicas o mil islas",[["","$ 24.000"]]],
+ ["Steak Burger","Doble carne smash, cheddar, bacon, lechuga, tomate, cebolla, papas fritas y salsas clásicas",[["","$ 24.000"]]]
+ ]},
+{id:"milanesas",t:"Milanesas",type:"cards",items:[
+ ["Milanesa","Milanesas de peceto o suprema de pollo, acompañada de papas fritas o ensalada",[["","$ 26.000"]]],
+ ["Mila Spaghetti","Pasta seca spaghetti, milanesa de peceto, con salsa pomodoro, pesto, hongos o rosa",[["","$ 28.000"]]],
+ ["Mila Napo","Milanesa napolitana suprema de pollo, acompañada de papas fritas o ensalada",[["","$ 28.000"]]],
+ ["Mila Pasta","Pasta seca rigate, milanesa suprema de pollo, con salsa pomodoro, pesto, hongos o rosa",[["","$ 28.000"]]]
+ ]},
+{id:"especialidades",t:"Especialidades",type:"cards",items:[
+ ["Avocado Toast","Pan crocante masa madre, guacamole, palta, huevo y semillas (versión opción ensalada)",[["","$ 20.000"]]],
+ ["Toscana Toast","Pan crocante de jamón crudo, tomates, rúcula, burrata y alioli albahaca (versión opción ensalada)",[["","$ 20.000"]]],
+ ["Berlin Pizza Dogs","Pancho de pan masa madre y salchicha alemana, mozzarella, salsa kétchup, mayonesa o barbacoa",[["","$ 25.000"]]],
+ ["Londres Pizza Dogs","Pancho de pan masa madre y salchicha alemana, provoleta, pepperoni, pepinillo y salsa mil islas",[["","$ 24.000"]]],
+ ["Burrata Portafoglio","Pan de pizza crocante y esponjoso, tomates, jamón crudo, rúcula, albahaca y burrata",[["","$ 30.000"]]],
+ ["Pistacchio Portafoglio","Pan de pizza crocante y esponjoso, mortadela, pistacchio, rúcula, tomates, albahaca y burrata",[["","$ 30.000"]]]
+ ]},
+{id:"tablas",t:"Tablas y rabas",type:"cards",items:[
+ ["Rabas","Aros de calamar fritos acompañados con mayonesa cardini y limones asados",[["","$ 35.000"]]],
+ ["Tablas","Tablas de quesos, fiambres, pan crocante, acompañado de encurtidos y alioli ajo",[["","$ 35.000"]]]
+ ]},
+{id:"bodegas",t:"Bodegas",type:"wine",groups:[
+ ["Ernesto Catena",[["Alma negra blend","$ 40.000"],["Mara malbec","$ 25.000"],["Mara cabernet franc","$ 25.000"],["Mara petit verdot","$ 25.000"],["Mara merlot","$ 25.000"],["Mara bonarda","$ 25.000"],["Mara pinot noir","$ 25.000"],["Animal cabernet sauvignon","$ 20.000"],["Animal malbec","$ 20.000"],["Animal blend tintas","$ 20.000"],["Hippie love pinot noir","$ 15.000"]]],
+ ["La Posta Wines",[["La victoria malbec","$ 25.000"],["Pizzella malbec","$ 25.000"],["Paulucci malbec","$ 25.000"],["Fazzio malbec","$ 25.000"],["Armando bonarda","$ 25.000"],["Glorieta pinot noir","$ 25.000"]]],
+ ["Universo Paralelo",[["Sangre de júpiter pinot noir","$ 25.000"],["Sangre de júpiter cabernet franc","$ 25.000"],["Sangre de júpiter malbec","$ 25.000"],["Sangre de júpiter semillón","$ 25.000"]]],
+ ["Ricchitelli",[["Gualtallary cabernet franc","$ 45.000"],["Gualtallary malbec","$ 45.000"],["Gualtallary garnacha","$ 45.000"],["Gualtallary chardonnay","$ 45.000"],["Tinto de la casa malbec","$ 35.000"],["Blanco de la casa sauvignon blanc","$ 35.000"]]],
+ ["Otras bodegas",[["Nube negra malbec","$ 40.000"],["Albaflor single vineyard syrah","$ 30.000"],["Albaflor single vineyard merlot","$ 30.000"],["El espía malbec","$ 15.000"],["El espectador blend","$ 15.000"],["Finca blanco y rosado dulces","$ 15.000"]]]
+ ]},
+{id:"bebidas",t:"Aperitivos y bebidas",type:"list",items:[
+ ["Branca / Carpano / Vermouth","$ 10.000"],["Cynar / Aperol / Gin frutos","$ 12.000"],["Caipi Absolut / Gin Bombay","$ 14.000"],["Heineken litro","$ 14.000"],["Heineken con y sin alcohol 330","$ 7.000"],["Copa vino tinto, blanco y rosado","$ 7.000"],["Gaseosas vidrio 350 ml","$ 4.000"],["Saborizadas y aguas 500 ml","$ 4.000"]]},
+{id:"postres",t:"Postres y dulces",type:"list",items:[
+ ["Scones y mermelada","$ 6.000"],["Afogatto espresso y helado","$ 6.000"],["Macarrones","$ 8.000"],["Cookie helado y malbec","$ 8.000"],["Flan casero / Cheesecake","$ 10.000"],["Volcán chocolate","$ 14.000"]]},
+{id:"cafe",t:"Café e infusiones",type:"list",items:[
+ ["Espresso","$ 3.000"],["Latte","$ 4.000"],["Flat white","$ 5.000"],["English tea","$ 3.000"],["Exprimido naranja vaso 460 ml","$ 8.000"],["Limonada fresca vaso 460 ml","$ 6.000"]]}
+];
+
+/* ============ RENDER ============ */
+var chips=document.getElementById("chips"),menu=document.getElementById("menu");
+function chip(label,id){var b=document.createElement("button");b.className="chip";b.textContent=label;b.dataset.id=id;b.onclick=function(){show(id)};chips.appendChild(b)}
+chip("Todas","all");
+var html="";
+MENU.forEach(function(c){
+  chip(c.t,c.id);
+  html+='<section id="'+c.id+'" data-cat="'+c.id+'"><div class="sec-h"><h2>'+c.t+'</h2><span class="star">✧</span></div><div class="rule"></div>';
+  if(c.intro)html+='<p class="intro">'+c.intro+'</p>';
+  if(c.type==="cards"){
+    html+='<div class="grid">';
+    c.items.forEach(function(i){
+      var pr=i[2].map(function(p){return p[0]&&i[2].length===1?'<small>'+p[0]+'</small>'+p[1]:'<span>'+(p[0]?p[0]+' ':'')+p[1]+'</span>'}).join("");
+      html+='<article class="card"><h3>'+i[0]+'</h3><p>'+i[1]+'</p><div class="price">'+pr+'</div></article>';
+    });
+    html+='</div>';
+  }else if(c.type==="list"){
+    html+='<div class="list">'+c.items.map(function(i){return '<div class="row"><span>'+i[0]+'</span><b>'+i[1]+'</b></div>'}).join("")+'</div>';
+  }else{
+    html+='<div class="list">'+c.groups.map(function(g){return '<div class="grp">'+g[0]+'</div>'+g[1].map(function(i){return '<div class="row"><span>'+i[0]+'</span><b>'+i[1]+'</b></div>'}).join("")}).join("")+'</div>';
+  }
+  html+='</section>';
+});
+html+='<a class="top" href="#">Volver arriba ↑</a>';
+menu.innerHTML=html;
+
+function show(id){
+  document.querySelectorAll(".chip").forEach(function(b){
+    var on=b.dataset.id===id;b.classList.toggle("on",on);
+    if(on)b.scrollIntoView({inline:"center",block:"nearest",behavior:"smooth"});
+  });
+  document.querySelectorAll("section").forEach(function(s){s.classList.toggle("hide",id!=="all"&&s.dataset.cat!==id)});
+  var y=document.querySelector("nav").offsetTop+document.querySelector("nav").offsetHeight;
+  if(window.scrollY>y)window.scrollTo({top:y-1,behavior:"smooth"});
+}
+show("all");
+</script>
+</body>
+</html>
