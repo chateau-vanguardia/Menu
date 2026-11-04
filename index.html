@@ -56,6 +56,10 @@ footer{margin-top:40px;text-align:center;padding:30px 16px 44px;border-top:1px s
 footer .nm{font-family:Italiana,Georgia,serif;font-size:1.5rem;color:var(--ink);letter-spacing:.06em;margin-bottom:6px}
 footer a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
 footer div{margin:4px 0}
+.wa{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:20;display:flex;align-items:center;gap:9px;background:#25a05a;color:#fff;text-decoration:none;font-size:.8rem;font-weight:500;letter-spacing:.04em;padding:12px 18px 12px 14px;border-radius:999px;box-shadow:0 6px 18px rgba(74,47,40,.28);transition:transform .2s,box-shadow .2s}
+.wa:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(74,47,40,.36)}
+.wa svg{width:22px;height:22px;fill:#fff;flex:none}
+@media (max-width:420px){.wa{padding:13px;}.wa span{display:none}}
 @media (max-width:560px){.grid{grid-template-columns:1fr}.arc{width:100px;height:100px}}
 </style>
 </head>
@@ -75,6 +79,11 @@ footer div{margin:4px 0}
   <div><a href="https://www.instagram.com/chateau.vanguardia/" target="_blank" rel="noopener">@chateau.vanguardia</a></div>
   <div><a href="carta-original.pdf" target="_blank" rel="noopener">Ver carta original en PDF ↗</a></div>
 </footer>
+
+<a class="wa" id="wa" href="#" target="_blank" rel="noopener" aria-label="Reservar por WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.04 3C9.4 3 4 8.4 4 15.03c0 2.12.56 4.19 1.61 6.01L4 28l7.1-1.86a12 12 0 0 0 4.94 1.06C22.68 27.2 28 21.8 28 15.17 28 8.4 22.68 3 16.04 3Zm0 21.9c-1.74 0-3.44-.47-4.93-1.35l-.35-.21-4.2 1.1 1.12-4.1-.23-.38a9.9 9.9 0 0 1-1.52-5.3c0-5.47 4.45-9.92 9.93-9.92 5.45 0 9.9 4.45 9.9 9.92 0 5.5-4.45 9.24-9.72 9.24Zm5.44-7.44c-.3-.15-1.77-.87-2.04-.97-.28-.1-.48-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.08-.8.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/></svg>
+  <span>Reservar</span>
+</a>
 
 <script>
 /* ============ DATOS DE LA CARTA (editá acá) ============
@@ -121,7 +130,7 @@ var MENU=[
 {id:"burgers",t:"Burgers",type:"cards",items:[
  ["Cheese Burger","Doble carne smash, cheddar, papas fritas y salsas mayonesa, ketchup, bbq o mil islas",[["","$ 20.000"]]],
  ["Onion Burger","Doble carne smash, cheddar, bacon, cebolla caramelizada, papas fritas y salsa mil islas",[["","$ 24.000"]]],
- ["Bacon Burger","Doble carne smash, cheddar, bacon, papas fritas, y salsas clásicas o mil islas",[["","$ 22.000"]]],
+ ["Bacon Burger","Doble carne smash, cheddar, bacon, papas fritas y salsas mayonesa, ketchup, bbq o mil islas",[["","$ 22.000"]]],
  ["Relish Burger","Doble carne smash, cheddar, bacon, pepinillos, papas fritas y salsa mil islas",[["","$ 24.000"]]],
  ["Egg Burger","Doble carne smash, cheddar, bacon, huevo, papas fritas, y salsas clásicas o mil islas",[["","$ 24.000"]]],
  ["Steak Burger","Doble carne smash, cheddar, bacon, lechuga, tomate, cebolla, papas fritas y salsas clásicas",[["","$ 24.000"]]]
@@ -133,12 +142,12 @@ var MENU=[
  ["Mila Pasta","Pasta seca rigate, milanesa suprema de pollo, con salsa pomodoro, pesto, hongos o rosa",[["","$ 28.000"]]]
  ]},
 {id:"especialidades",t:"Especialidades",type:"cards",items:[
- ["Avocado Toast","Pan crocante masa madre, guacamole, palta, huevo y semillas (versión opción ensalada)",[["","$ 20.000"]]],
- ["Toscana Toast","Pan crocante de jamón crudo, tomates, rúcula, burrata y alioli albahaca (versión opción ensalada)",[["","$ 20.000"]]],
- ["Berlin Pizza Dogs","Pancho de pan masa madre y salchicha alemana, mozzarella, salsa kétchup, mayonesa o barbacoa",[["","$ 25.000"]]],
- ["Londres Pizza Dogs","Pancho de pan masa madre y salchicha alemana, provoleta, pepperoni, pepinillo y salsa mil islas",[["","$ 24.000"]]],
- ["Burrata Portafoglio","Pan de pizza crocante y esponjoso, tomates, jamón crudo, rúcula, albahaca y burrata",[["","$ 30.000"]]],
- ["Pistacchio Portafoglio","Pan de pizza crocante y esponjoso, mortadela, pistacchio, rúcula, tomates, albahaca y burrata",[["","$ 30.000"]]]
+ ["Avocado Toast","Pan crocante de masa madre, guacamole, láminas de palta, huevo over easy y semillas",[["","$ 20.000"]]],
+ ["Toscana Toast","Pan crocante de masa madre, jamón crudo, hojas verdes, albahaca, tomates y stracciatella",[["","$ 20.000"]]],
+ ["Buenos Aires Toast","Pan crocante de masa madre, jamón cocido, mozzarella y quesos a elección (versión napolitano)",[["","$ 20.000"]]],
+ ["Aussies Original Salad","Ensalada Sydney de guacamole, pan crocante, lechugas, láminas de palta, huevo over easy y semillas",[["","$ 25.000"]]],
+ ["Cardini Original Salad","Ensalada Caesar, hojas verdes, pechuga rebozada, provola, pan crocante y salsa receta original Cardini",[["","$ 25.000"]]],
+ ["Burrata Original Salad","Ensalada Apulia de jamón cocido, hojas verdes, tomates, parmesano, burrata y alioli de albahaca",[["","$ 25.000"]]]
  ]},
 {id:"tablas",t:"Tablas y rabas",type:"cards",items:[
  ["Rabas","Aros de calamar fritos acompañados con mayonesa cardini y limones asados",[["","$ 35.000"]]],
@@ -195,6 +204,10 @@ function show(id){
   if(window.scrollY>y)window.scrollTo({top:y-1,behavior:"smooth"});
 }
 show("all");
+/* WhatsApp: número en formato internacional sin + ni espacios (ej. 5492246XXXXXX). Si queda vacío, WhatsApp pide elegir el contacto. */
+var WA_NUM="";
+var WA_MSG="Hola Chateau Vanguardia! Quisiera reservar una mesa.\nFecha: \nHorario: \nCantidad de personas: ";
+document.getElementById("wa").href="https://wa.me/"+WA_NUM+"?text="+encodeURIComponent(WA_MSG);
 </script>
 </body>
 </html>
