@@ -60,6 +60,7 @@ footer div{margin:4px 0}
 .wa:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(74,47,40,.36)}
 .wa svg{width:22px;height:22px;fill:#fff;flex:none}
 @media (max-width:420px){.wa{padding:13px;}.wa span{display:none}}
+@media (min-width:561px){.grid.flow{grid-auto-flow:column;grid-template-rows:repeat(3,auto)}}
 @media (max-width:560px){.grid{grid-template-columns:1fr}.arc{width:100px;height:100px}}
 </style>
 </head>
@@ -143,9 +144,9 @@ var MENU=[
  ]},
 {id:"especialidades",t:"Especialidades",type:"cards",items:[
  ["Avocado Toast","Pan crocante de masa madre, guacamole, láminas de palta, huevo over easy y semillas",[["","$ 20.000"]]],
- ["Toscana Toast","Pan crocante de masa madre, jamón crudo, hojas verdes, albahaca, tomates y stracciatella",[["","$ 20.000"]]],
+ ["Toscana Toast","Pan crocante de masa madre, jamón crudo, hojas verdes, albahaca, tomates y alioli ajo",[["","$ 20.000"]]],
  ["Buenos Aires Toast","Pan crocante de masa madre, jamón cocido, mozzarella y quesos a elección (versión napolitano)",[["","$ 20.000"]]],
- ["Aussies Original Salad","Ensalada Sydney de guacamole, pan crocante, lechugas, láminas de palta, huevo over easy y semillas",[["","$ 25.000"]]],
+ ["Aussies Original Salad","Ensalada Sydney de guacamole, pan crocante, lechugas, láminas de palta, huevo y semillas",[["","$ 25.000"]]],
  ["Cardini Original Salad","Ensalada Caesar, hojas verdes, pechuga rebozada, provola, pan crocante y salsa receta original Cardini",[["","$ 25.000"]]],
  ["Burrata Original Salad","Ensalada Apulia de jamón cocido, hojas verdes, tomates, parmesano, burrata y alioli de albahaca",[["","$ 25.000"]]]
  ]},
@@ -178,7 +179,7 @@ MENU.forEach(function(c){
   html+='<section id="'+c.id+'" data-cat="'+c.id+'"><div class="sec-h"><h2>'+c.t+'</h2><span class="star">✧</span></div><div class="rule"></div>';
   if(c.intro)html+='<p class="intro">'+c.intro+'</p>';
   if(c.type==="cards"){
-    html+='<div class="grid">';
+    html+='<div class="grid'+(c.id==="especialidades"?' flow':'')+'">';
     c.items.forEach(function(i){
       var pr=i[2].map(function(p){return p[0]&&i[2].length===1?'<small>'+p[0]+'</small>'+p[1]:'<span>'+(p[0]?p[0]+' ':'')+p[1]+'</span>'}).join("");
       html+='<article class="card"><h3>'+i[0]+'</h3><p>'+i[1]+'</p><div class="price">'+pr+'</div></article>';
@@ -205,7 +206,7 @@ function show(id){
 }
 show("all");
 /* WhatsApp: número en formato internacional sin + ni espacios (ej. 5492246XXXXXX). Si queda vacío, WhatsApp pide elegir el contacto. */
-var WA_NUM="5491135020660";
+var WA_NUM="";
 var WA_MSG="Hola Chateau Vanguardia! Quisiera reservar una mesa.\nFecha: \nHorario: \nCantidad de personas: ";
 document.getElementById("wa").href="https://wa.me/"+WA_NUM+"?text="+encodeURIComponent(WA_MSG);
 </script>
