@@ -43,7 +43,7 @@ h2{font-family:"Brown Sugar",Georgia,serif;font-weight:400;font-size:clamp(1.9re
 .card p{margin:0 0 14px;font-size:.9rem;flex:1}
 .price{border-top:1px solid var(--line);padding-top:10px;font-weight:700;font-size:.9rem;color:var(--ink);letter-spacing:.04em}
 .price small{display:block;font-weight:400;font-size:.78rem;color:var(--text);letter-spacing:0}
-.price span+span{margin-left:12px}
+.price span{display:block}.price span+span{margin-top:4px}.price span small{display:inline;margin-right:6px}
 .list{background:var(--card);border:1px solid var(--line);padding:6px 18px}
 .row{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid var(--line);font-size:.93rem}
 .row:last-child{border-bottom:0}
@@ -96,26 +96,26 @@ var MENU=[
 {id:"pastas",t:"Pastas italianas",type:"cards",
  intro:"Nuestra cocina de pastas combina tradición italiana y una mirada propia. Pasta seca importada de Italia, pastas rellenas amasadas a mano y salsas elaboradas con tomate italiano.",
  items:[
- ["De la abuela","Pasta seca italiana spaghetti o penne rigate, con salsa pomodoro, hongos, pesto o rosa",[[E,"$ 20.000"]]],
- ["Sorrentino","Pasta fresca relleno jamón y mozzarella, acompañado con salsa de pomodoro y crema",[[E,"$ 26.000"]]],
- ["Ragú del abuelo","Pasta seca italiana spaghetti o penne rigate, acompañado con salsa ragú (alla bolognese)",[[E,"$ 24.000"]]],
- ["Panzotti","Pasta fresca relleno pollo cocción al disco, acompañado con salsa crema de cúrcuma",[[E,"$ 26.000"]]],
- ["Gnocchi ripieni","Pasta fresca ñoquis rellenos, mozzarella y jamón, acompañado con salsa de pomodoro",[[E,"$ 24.000"]]],
  ["Ravioli","Pasta fresca relleno carne cocción brasas, acompañado con salsa pomodoro y chimichurri",[[E,"$ 28.000"]]],
- ["Doppio","Pasta fresca ravioli relleno ricota y verdura, acompañado con salsa de pomodoro y pesto",[[E,"$ 26.000"]]],
  ["Furiosa","Pasta seca italiana spaghetti o penne rigate, salsa pomodoro, burrata, tomates y pesto",[[E,"$ 28.000"]]],
- ["Agnelotti","Pasta fresca relleno cabutia, mozzarella y almendras, con salsa crema de hongos locales",[[E,"$ 26.000"]]],
  ["Intensa","Pasta seca italiana spaghetti o penne rigate, salsa pomodoro, anchoas, aceitunas y guindilla",[[E,"$ 28.000"]]],
- ["Auténtica","Pasta seca italiana spaghetti o penne rigate, salsa de mejillones y langostinos (allo scoglio)",[[E,"$ 28.000"]]]
+ ["Auténtica","Pasta seca italiana spaghetti o penne rigate, salsa de mejillones y langostinos (allo scoglio)",[[E,"$ 28.000"]]],
+ ["Sorrentino","Pasta fresca relleno jamón y mozzarella, acompañado con salsa de pomodoro y crema",[[E,"$ 26.000"]]],
+ ["Panzotti","Pasta fresca relleno pollo cocción al disco, acompañado con salsa crema de cúrcuma",[[E,"$ 26.000"]]],
+ ["Doppio","Pasta fresca ravioli relleno ricota y verdura, acompañado con salsa de pomodoro y pesto",[[E,"$ 26.000"]]],
+ ["Agnelotti","Pasta fresca relleno cabutia, mozzarella y almendras, con salsa crema de hongos locales",[[E,"$ 26.000"]]],
+ ["Ragú del abuelo","Pasta seca italiana spaghetti o penne rigate, acompañado con salsa ragú (alla bolognese)",[[E,"$ 24.000"]]],
+ ["Gnocchi ripieni","Pasta fresca ñoquis rellenos, mozzarella y jamón, acompañado con salsa de pomodoro",[[E,"$ 24.000"]]],
+ ["De la abuela","Pasta seca italiana spaghetti o penne rigate, con salsa pomodoro, hongos, pesto o rosa",[[E,"$ 20.000"]]]
  ]},
 {id:"carnes",t:"Nuestras carnes",type:"cards",items:[
- ["Banderita","Asado tira de ternera, acompañado con guarnición, chimichurri, elaboración fuego directo a la parrilla",[["Una persona","$ 30.000"],["Dos personas","$ 45.000"]]],
- ["A las brasas","Vacío o brisket, acompañado con agnelotti, salsa de crema cúrcuma y hongos locales",[[E,"$ 50.000"]]],
- ["Vacío","Medialuna, punta o cima, acompañado con guarnición, elaboración fuego indirecto a las brasas ahumador",[["Una persona","$ 35.000"],["Dos personas","$ 50.000"]]],
- ["Al fuego","Entraña de ternera, acompañado con spaghetti, salsa de pomodoro italiano y pesto genovés",[[E,"$ 50.000"]]],
  ["Entraña","Entraña de ternera, acompañado con guarnición, chimichurri, elaboración fuego directo a la parrilla",[["Una persona","$ 40.000"],["Dos personas","$ 60.000"]]],
+ ["Vacío","Medialuna, punta o cima, acompañado con guarnición, elaboración fuego indirecto a las brasas ahumador",[["Una persona","$ 35.000"],["Dos personas","$ 50.000"]]],
+ ["Banderita","Asado tira de ternera, acompañado con guarnición, chimichurri, elaboración fuego directo a la parrilla",[["Una persona","$ 30.000"],["Dos personas","$ 45.000"]]],
  ["Al hierro","Ceja y ojo de bife, acompañado con guarnición. Corte transversal, elaboración fuego directo al hierro",[[E,"$ 60.000"]]],
  ["Parrillada","Nuestras carnes de ternera, novillito o novillo, fuegos y brasas, acompañado de guarnición",[["Para dos personas","$ 60.000"]]],
+ ["A las brasas","Vacío o brisket, acompañado con agnelotti, salsa de crema cúrcuma y hongos locales",[[E,"$ 50.000"]]],
+ ["Al fuego","Entraña de ternera, acompañado con spaghetti, salsa de pomodoro italiano y pesto genovés",[[E,"$ 50.000"]]],
  ["Guarniciones","Ensalada lechuga, tomate y cebolla · Papas fritas · Ensalada rúcula y parmesano · Batatas fritas",[["Única presentación","$ 15.000"]]]
  ]},
 {id:"pizzas",t:"Pizzas napoletanas",type:"cards",items:[
@@ -130,16 +130,16 @@ var MENU=[
  ]},
 {id:"burgers",t:"Burgers",type:"cards",items:[
  ["Cheese Burger","Doble carne smash, cheddar, papas fritas y salsas mayonesa, ketchup, bbq o mil islas",[["","$ 20.000"]]],
- ["Onion Burger","Doble carne smash, cheddar, bacon, cebolla caramelizada, papas fritas y salsa mil islas",[["","$ 24.000"]]],
  ["Bacon Burger","Doble carne smash, cheddar, bacon, papas fritas y salsas mayonesa, ketchup, bbq o mil islas",[["","$ 22.000"]]],
+ ["Onion Burger","Doble carne smash, cheddar, bacon, cebolla caramelizada, papas fritas y salsa mil islas",[["","$ 24.000"]]],
  ["Relish Burger","Doble carne smash, cheddar, bacon, pepinillos, papas fritas y salsa mil islas",[["","$ 24.000"]]],
  ["Egg Burger","Doble carne smash, cheddar, bacon, huevo, papas fritas y salsas clásicas o mil islas",[["","$ 24.000"]]],
  ["Steak Burger","Doble carne smash, cheddar, bacon, lechuga, tomate, cebolla, papas fritas y salsas clásicas",[["","$ 24.000"]]]
  ]},
 {id:"milanesas",t:"Milanesas",type:"cards",items:[
  ["Milanesa","Milanesas de peceto o suprema de pollo, acompañada de papas fritas o ensalada",[["","$ 26.000"]]],
- ["Mila Spaghetti","Pasta seca spaghetti, milanesa de peceto, con salsa pomodoro, pesto, hongos o rosa",[["","$ 28.000"]]],
  ["Mila Napo","Milanesa napolitana suprema de pollo, acompañada de papas fritas o ensalada",[["","$ 28.000"]]],
+ ["Mila Spaghetti","Pasta seca spaghetti, milanesa de peceto, con salsa pomodoro, pesto, hongos o rosa",[["","$ 28.000"]]],
  ["Mila Pasta","Pasta seca rigate, milanesa suprema de pollo, con salsa pomodoro, pesto, hongos o rosa",[["","$ 28.000"]]]
  ]},
 {id:"especialidades",t:"Especialidades",type:"cards",items:[
@@ -181,7 +181,7 @@ MENU.forEach(function(c){
   if(c.type==="cards"){
     html+='<div class="grid'+(c.id==="especialidades"?' flow':'')+'">';
     c.items.forEach(function(i){
-      var pr=i[2].map(function(p){return p[0]&&i[2].length===1?'<small>'+p[0]+'</small>'+p[1]:'<span>'+(p[0]?p[0]+' ':'')+p[1]+'</span>'}).join("");
+      var pr=i[2].map(function(p){return p[0]&&i[2].length===1?'<small>'+p[0]+'</small>'+p[1]:'<span>'+(p[0]?'<small>'+p[0]+'</small>':'')+p[1]+'</span>'}).join("");
       html+='<article class="card"><h3>'+i[0]+'</h3><p>'+i[1]+'</p><div class="price">'+pr+'</div></article>';
     });
     html+='</div>';
